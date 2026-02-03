@@ -10,10 +10,16 @@ import { Footer } from './components/Footer';
 import { AIChatbot } from './components/AIChatbot';
 import { useScrollReveal } from './hooks/useScrollReveal';
 
-const RevealSection: React.FC<{ children: React.ReactNode; id: string }> = ({ children, id }) => {
+const RevealSection: React.FC<{ children: React.ReactNode; id: string; className?: string }> = ({ children, id, className = "" }) => {
   const { ref, isVisible } = useScrollReveal(0.1);
   return (
-    <section id={id} ref={ref} className={`transition-all duration-1000 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+    <section 
+      id={id} 
+      ref={ref} 
+      className={`transition-all duration-[1200ms] cubic-bezier(0.4, 0, 0.2, 1) transform ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
+      } ${className}`}
+    >
       {children}
     </section>
   );
@@ -25,7 +31,7 @@ const App: React.FC = () => {
   const toggleConsultation = () => setIsConsultationOpen(!isConsultationOpen);
 
   return (
-    <div className="min-h-screen flex flex-col selection:bg-indigo-100 selection:text-indigo-900">
+    <div className="min-h-screen flex flex-col selection:bg-indigo-100 selection:text-indigo-900 bg-slate-50">
       <Header onBookNow={toggleConsultation} />
       
       <main className="flex-grow">
@@ -33,7 +39,7 @@ const App: React.FC = () => {
           <Hero onBookNow={toggleConsultation} />
         </RevealSection>
         
-        <RevealSection id="about">
+        <RevealSection id="about" className="bg-white">
           <About />
         </RevealSection>
         
@@ -56,6 +62,7 @@ const App: React.FC = () => {
             <button 
               onClick={toggleConsultation}
               className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 transition-colors z-10"
+              aria-label="Close modal"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

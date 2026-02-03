@@ -1,4 +1,7 @@
 
+// Added React import to resolve 'Cannot find namespace React' error when using React.ReactNode
+import React from 'react';
+
 export interface ServiceItem {
   id: string;
   title: string;
