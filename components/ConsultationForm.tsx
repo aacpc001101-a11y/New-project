@@ -15,8 +15,8 @@ export const ConsultationForm: React.FC<ConsultationFormProps> = ({ onClose }) =
 
   if (submitted) {
     return (
-      <div className="p-12 text-center">
-        <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+      <div className="p-12 text-center" role="alert" aria-live="assertive">
+        <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6" aria-hidden="true">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
@@ -43,8 +43,9 @@ export const ConsultationForm: React.FC<ConsultationFormProps> = ({ onClose }) =
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
-            <label className="text-sm font-bold text-slate-700">Full Name</label>
+            <label htmlFor="full-name" className="text-sm font-bold text-slate-700">Full Name</label>
             <input 
+              id="full-name"
               type="text" 
               required
               className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
@@ -52,8 +53,9 @@ export const ConsultationForm: React.FC<ConsultationFormProps> = ({ onClose }) =
             />
           </div>
           <div className="space-y-2">
-            <label className="text-sm font-bold text-slate-700">Email Address</label>
+            <label htmlFor="email" className="text-sm font-bold text-slate-700">Email Address</label>
             <input 
+              id="email"
               type="email" 
               required
               className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
@@ -64,16 +66,20 @@ export const ConsultationForm: React.FC<ConsultationFormProps> = ({ onClose }) =
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
-            <label className="text-sm font-bold text-slate-700">Phone Number</label>
+            <label htmlFor="phone" className="text-sm font-bold text-slate-700">Phone Number</label>
             <input 
+              id="phone"
               type="tel" 
               className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
               placeholder="(647) 000-0000"
             />
           </div>
           <div className="space-y-2">
-            <label className="text-sm font-bold text-slate-700">Service Needed</label>
-            <select className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all">
+            <label htmlFor="service-type" className="text-sm font-bold text-slate-700">Service Needed</label>
+            <select 
+              id="service-type"
+              className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+            >
               <option>Personal Tax Return</option>
               <option>Corporate Tax Services</option>
               <option>Bookkeeping</option>
@@ -84,8 +90,9 @@ export const ConsultationForm: React.FC<ConsultationFormProps> = ({ onClose }) =
         </div>
 
         <div className="space-y-2">
-          <label className="text-sm font-bold text-slate-700">Message (Optional)</label>
+          <label htmlFor="message" className="text-sm font-bold text-slate-700">Message (Optional)</label>
           <textarea 
+            id="message"
             rows={4}
             className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
             placeholder="Tell us a bit about your situation..."
