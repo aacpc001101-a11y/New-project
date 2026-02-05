@@ -27,14 +27,14 @@ export const Footer: React.FC = () => {
               className="flex items-center space-x-2"
             >
               <div className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                D
+                B
               </div>
               <span className="text-xl font-bold tracking-tight text-slate-900">
-                D-Co Management
+                Bookkeeping & Tax Service
               </span>
             </a>
             <p className="text-slate-500 leading-relaxed text-sm">
-              Premium tax and bookkeeping services for individuals and corporations. Delivering precision and peace of mind since 2014.
+              Professional personal and corporate tax and bookkeeping services. Delivering precision and peace of mind since 2014.
             </p>
           </div>
 
@@ -92,7 +92,7 @@ export const Footer: React.FC = () => {
 
         <div className="border-t border-slate-200 pt-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-slate-400 text-xs font-medium">
-            © {new Date().getFullYear()} D-Co Management Services. Mississauga, Ontario.
+            © {new Date().getFullYear()} Bookkeeping & Tax Service. Mississauga, Ontario.
           </p>
           <div className="flex gap-8 text-xs font-bold text-slate-400 uppercase tracking-widest">
             <a href="#" className="hover:text-indigo-600 transition-colors" onClick={(e) => e.preventDefault()}>Privacy Policy</a>

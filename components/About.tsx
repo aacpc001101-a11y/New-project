@@ -27,7 +27,7 @@ export const About: React.FC = () => {
               Trusted Financial <br />Partners Since 2014.
             </h3>
             <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-              Based in Mississauga, D-Co Management Services provides a personal touch to tax and bookkeeping. We bridge the gap between complex government regulations and your unique financial goals.
+              Based in Mississauga, our Bookkeeping & Tax Service provides a personal touch to tax and accounting. We bridge the gap between complex government regulations and your unique financial goals.
             </p>
             <p className="text-lg text-slate-500 mb-12 leading-relaxed">
               Our team consists of dedicated professionals who specialize in the Canadian tax landscape. From CRA audit support to strategic corporate restructuring, we offer the depth of a large firm with the agility of a boutique consultancy.

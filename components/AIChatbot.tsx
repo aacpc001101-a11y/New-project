@@ -5,7 +5,7 @@ import { GoogleGenAI } from "@google/genai";
 export const AIChatbot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<{ role: 'user' | 'ai', text: string }[]>([
-    { role: 'ai', text: 'Hello! I am the D-Co Virtual Assistant. How can I help you with your tax or bookkeeping questions today?' }
+    { role: 'ai', text: 'Hello! I am your Tax & Bookkeeping Virtual Assistant. How can I help you with your financial questions today?' }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -31,7 +31,7 @@ export const AIChatbot: React.FC = () => {
         model: 'gemini-3-flash-preview',
         contents: userMessage,
         config: {
-          systemInstruction: "You are a professional and helpful financial assistant for D-Co Management Services, a tax and bookkeeping firm in Mississauga, Canada. Provide concise, accurate general tax advice for Canadians. Always remind users that for specific cases, they should book a formal consultation with a D-Co expert. Be polite, clear, and professional.",
+          systemInstruction: "You are a professional and helpful financial assistant for a boutique tax and bookkeeping firm in Mississauga, Canada. Provide concise, accurate general tax advice for Canadians. Always remind users that for specific cases, they should book a formal consultation with our expert team. Be polite, clear, and professional.",
         },
       });
 
@@ -64,7 +64,7 @@ export const AIChatbot: React.FC = () => {
           </svg>
         )}
         <span className="absolute right-full mr-4 bg-slate-900 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-          Ask AI Assistant
+          Ask Financial Assistant
         </span>
       </button>
 
@@ -77,7 +77,7 @@ export const AIChatbot: React.FC = () => {
           <div className="bg-indigo-600 p-4 text-white">
             <h4 className="font-bold flex items-center gap-2">
               <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" aria-hidden="true"></span>
-              D-Co Virtual Assistant
+              Financial Assistant
             </h4>
             <p className="text-xs text-indigo-100 mt-1 italic">Powered by Gemini AI</p>
           </div>

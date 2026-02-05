@@ -20,7 +20,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg mb-1">Our Location</h4>
-                  <p className="text-slate-400">Mississauga, ON, L5M 7G2<br />Canada</p>
+                  <p className="text-slate-400">1530 Fairway Hills Dr<br />Mississauga, ON L5M 7G2</p>
                 </div>
               </div>
 
@@ -32,7 +32,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg mb-1">Email Us</h4>
-                  <p className="text-slate-400">info@dcomanagement.ca</p>
+                  <p className="text-slate-400">info@taxbookkeepingservice.ca</p>
                 </div>
               </div>
 
@@ -44,7 +44,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg mb-1">Call Us</h4>
-                  <p className="text-slate-400">+1 (647) 000-0000</p>
+                  <p className="text-slate-400">+1 (647) 385-6490</p>
                 </div>
               </div>
             </div>
@@ -68,10 +68,10 @@ export const Contact: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   </svg>
                 </div>
-                <h4 className="text-xl font-bold text-slate-900 mb-2">Visit Us</h4>
-                <p className="text-slate-600 mb-6">Serving the Greater Toronto Area from our Mississauga headquarters.</p>
+                <h4 className="text-xl font-bold text-slate-900 mb-2">Visit Our Office</h4>
+                <p className="text-slate-600 mb-6">Serving Mississauga from our Fairway Hills location.</p>
                 <a 
-                  href="https://www.google.com/maps" 
+                  href="https://www.google.com/maps/place/TrueLine+Bookkeeping/@43.5552737,-79.7046466,17z" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-block bg-white border border-slate-200 px-6 py-3 rounded-xl font-bold shadow-sm hover:shadow-md transition-all text-indigo-600"

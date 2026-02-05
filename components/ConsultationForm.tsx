@@ -23,7 +23,7 @@ export const ConsultationForm: React.FC<ConsultationFormProps> = ({ onClose }) =
         </div>
         <h3 className="text-2xl font-bold text-slate-900 mb-4">Request Received!</h3>
         <p className="text-slate-600 mb-8">
-          Thank you for reaching out. A specialist from D-Co Management Services will contact you within 24 hours to confirm your consultation.
+          Thank you for reaching out. A specialist from our team will contact you within 24 hours to confirm your consultation.
         </p>
         <button 
           onClick={onClose}

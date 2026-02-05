@@ -36,7 +36,7 @@ export const Hero: React.FC<HeroProps> = ({ onBookNow }) => {
             <span className="text-indigo-600">Empower Your Future.</span>
           </h1>
           <p className="text-xl text-slate-600 mb-10 max-w-2xl leading-relaxed">
-            D-Co Management Services provides expert personalized tax planning and bookkeeping for individuals and small businesses across the GTA. We take the stress out of your numbers so you can focus on what matters most.
+            Our Bookkeeping & Tax Service provides expert personalized tax planning and bookkeeping for individuals and small businesses across the GTA. We take the stress out of your numbers so you can focus on what matters most.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mb-16">
             <button 
