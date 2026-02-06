@@ -5,21 +5,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Professional Bookkeeping & Tax Service offers expert personal tax, corporate tax planning, and full-cycle bookkeeping in Mississauga and the GTA.">
-  <title>Bookkeeping & Tax Service | Professional Financial Solutions</title>
+  <title>Bookkeeping & Tax Service | Elegant Financial Solutions</title>
   
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
   
   <style>
     :root { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
-    .animate-in { animation-duration: 0.3s; animation-fill-mode: both; }
+    h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
+    
+    .animate-in { animation-duration: 0.5s; animation-fill-mode: both; }
     .fade-in { animation-name: fadeIn; }
     .slide-in-from-bottom-10 { animation-name: slideInBottom; }
+    
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     @keyframes slideInBottom { from { transform: translateY(10%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+    .rose-gradient {
+      background: linear-gradient(135deg, #fce7f3 0%, #fff1f2 100%);
+    }
+    .pill-button {
+      border-radius: 9999px;
+    }
   </style>
 
 <script type="importmap">
@@ -33,7 +43,7 @@
 }
 </script>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body class="bg-[#FCF9F9] text-slate-800">
   <div id="root"></div>
   <script type="module" src="./index.tsx"></script>
 </body>
