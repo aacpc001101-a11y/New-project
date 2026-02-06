@@ -58,7 +58,6 @@ const RevealSection: React.FC<{ children: React.ReactNode; id: string; className
 const Header: React.FC<{ onBookNow: () => void }> = ({ onBookNow }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [logoError, setLogoError] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -78,8 +77,8 @@ const Header: React.FC<{ onBookNow: () => void }> = ({ onBookNow }) => {
 
   const navLinks: NavLink[] = [
     { name: 'Home', href: '#home' },
-    { name: 'About Us', href: '#about' },
-    { name: 'Our Services', href: '#services' },
+    { name: 'About', href: '#about' },
+    { name: 'Services', href: '#services' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -87,19 +86,10 @@ const Header: React.FC<{ onBookNow: () => void }> = ({ onBookNow }) => {
     <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-2' : 'bg-transparent py-5'}`}>
       <div className="container mx-auto px-6 flex items-center justify-between">
         <a href="#home" onClick={(e) => handleNavClick(e, '#home')} className="flex items-center space-x-3 group">
-          {!logoError ? (
-            <img 
-              src="logo.png" 
-              alt="Numeracy Accounting Solutions Logo" 
-              className="h-10 lg:h-12 w-auto object-contain" 
-              onError={() => setLogoError(true)} 
-            />
-          ) : (
-            <div className="w-10 h-10 bg-[#1A1A1A] rounded flex items-center justify-center text-[#B4833E] font-bold text-xl border border-[#B4833E]/30 shadow-inner">N</div>
-          )}
+          <div className="w-10 h-10 bg-[#1A1A1A] rounded flex items-center justify-center text-[#B4833E] font-bold text-xl border border-[#B4833E]/30 shadow-inner">G</div>
           <div className="flex flex-col">
-            <span className="text-xl font-bold tracking-tight text-[#1A1A1A] group-hover:text-[#B4833E] transition-colors leading-none">NUMERACY</span>
-            <span className="text-[10px] uppercase tracking-[0.2em] text-[#B4833E] font-medium">Accounting Solutions</span>
+            <span className="text-xl font-bold tracking-tight text-[#1A1A1A] group-hover:text-[#B4833E] transition-colors leading-none uppercase">General</span>
+            <span className="text-[10px] uppercase tracking-[0.2em] text-[#B4833E] font-medium">Bookkeeping Co.</span>
           </div>
         </a>
         <nav className="hidden md:flex items-center space-x-8">
@@ -109,7 +99,7 @@ const Header: React.FC<{ onBookNow: () => void }> = ({ onBookNow }) => {
               <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-[#B4833E] transition-all group-hover:w-full"></span>
             </a>
           ))}
-          <button onClick={onBookNow} className="bg-[#1A1A1A] hover:bg-[#B4833E] text-white px-6 py-2.5 rounded-lg text-xs font-bold uppercase tracking-widest transition-all shadow-md active:scale-95">Book Consultation</button>
+          <button onClick={onBookNow} className="bg-[#1A1A1A] hover:bg-[#B4833E] text-white px-6 py-2.5 rounded-lg text-xs font-bold uppercase tracking-widest transition-all shadow-md active:scale-95">Consult Now</button>
         </nav>
         <button className="md:hidden text-slate-900 p-2" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle navigation menu">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -131,28 +121,28 @@ const Header: React.FC<{ onBookNow: () => void }> = ({ onBookNow }) => {
 
 const Hero: React.FC<{ onBookNow: () => void }> = ({ onBookNow }) => {
   return (
-    <div className="relative pt-32 pb-32 lg:pt-64 lg:pb-64 overflow-hidden bg-white">
+    <div className="relative pt-40 pb-40 lg:pt-72 lg:pb-72 overflow-hidden bg-white">
       <div className="absolute top-0 right-0 -mr-24 -mt-24 w-[600px] h-[600px] bg-slate-50 rounded-full blur-[120px] opacity-40"></div>
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center lg:text-left">
           <div className="flex items-center justify-center lg:justify-start gap-4 mb-8">
             <span className="h-[1px] w-12 bg-[#B4833E]"></span>
-            <span className="text-[#B4833E] text-[11px] font-bold tracking-[0.4em] uppercase">Professional Financial Intelligence</span>
+            <span className="text-[#B4833E] text-[11px] font-bold tracking-[0.4em] uppercase">Trusted Financial Management</span>
           </div>
           <h1 className="text-6xl lg:text-9xl font-serif text-[#1A1A1A] leading-[1] mb-8">
-            Precision in <br />
-            <span className="italic">Every Outcome.</span>
+            Expert Guidance. <br />
+            <span className="italic">Simplified Books.</span>
           </h1>
           <p className="text-lg lg:text-xl text-slate-500 mb-12 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
-            Numeracy Accounting Solutions provides executive tax planning and bookkeeping for high-growth businesses and discerning individuals. Based in Mississauga, serving the GTA with absolute integrity.
+            General Bookkeeping Co. provides boutique accounting and tax strategies for small businesses and professionals across the Greater Toronto Area. We bring clarity to your compliance.
           </p>
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-6">
-            <button onClick={onBookNow} className="bg-[#1A1A1A] hover:bg-[#B4833E] text-white text-sm px-10 py-5 rounded-lg font-bold uppercase tracking-widest transition-all shadow-2xl shadow-slate-200 active:scale-95">
-              Secure Your Consultation
+            <button onClick={onBookNow} className="bg-[#1A1A1A] hover:bg-[#B4833E] text-white text-sm px-10 py-5 rounded-lg font-bold uppercase tracking-widest transition-all shadow-2xl shadow-slate-100 active:scale-95">
+              Request a Consultation
             </button>
             <a href="#services" className="bg-white hover:bg-slate-50 text-slate-900 text-sm px-10 py-5 rounded-lg font-bold uppercase tracking-widest transition-all border border-slate-200 flex items-center justify-center gap-3 group">
-              View Services
+              Our Services
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -175,7 +165,7 @@ const About: React.FC = () => {
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-[8px] border-white ring-1 ring-slate-100">
               <img 
                 src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=2000" 
-                alt="Executive desk and financial planning representing professional accounting excellence" 
+                alt="Executive financial documents representing professional bookkeeping" 
                 className="w-full h-[500px] lg:h-[750px] object-cover object-center" 
                 loading="lazy"
                 decoding="async"
@@ -184,9 +174,9 @@ const About: React.FC = () => {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-slate-200 rounded-full z-0 pointer-events-none opacity-50"></div>
           </div>
           <div className="lg:w-1/2">
-            <span className="text-[#B4833E] text-[11px] font-bold tracking-[0.4em] uppercase mb-8 block">Our Competitive Edge</span>
-            <h3 className="text-4xl lg:text-7xl font-serif text-[#1A1A1A] mb-10 leading-[1.1]">The Power of <br /><span className="italic">Accurate Insight.</span></h3>
-            <p className="text-lg text-slate-500 mb-10 leading-relaxed font-light">At Numeracy, we believe that accounting is more than just compliance—it's a tool for strategic empowerment. Since 2014, we have helped businesses in the GTA transition from standard operations to financial mastery.</p>
+            <span className="text-[#B4833E] text-[11px] font-bold tracking-[0.4em] uppercase mb-8 block">Legacy of Excellence</span>
+            <h3 className="text-4xl lg:text-7xl font-serif text-[#1A1A1A] mb-10 leading-[1.1]">The Power of <br /><span className="italic">Expert Analysis.</span></h3>
+            <p className="text-lg text-slate-500 mb-10 leading-relaxed font-light">With nearly a decade of dedicated service in Mississauga and the GTA, General Bookkeeping Co. has built a reputation for meticulous accuracy and proactive financial planning. We empower our clients with data-driven confidence.</p>
             
             <div className="space-y-12">
               <div className="flex items-start gap-8 group">
@@ -194,17 +184,17 @@ const About: React.FC = () => {
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-[#1A1A1A] mb-2 uppercase tracking-wide">Absolute Compliance</h4>
-                  <p className="text-slate-500 leading-relaxed text-sm font-light">Rigorous adherence to Canadian tax codes ensures your standing with the CRA is always impeccable.</p>
+                  <h4 className="text-xl font-bold text-[#1A1A1A] mb-2 uppercase tracking-wide">CRA Compliance</h4>
+                  <p className="text-slate-500 leading-relaxed text-sm font-light">We stay current with evolving Canadian tax laws to ensure your business remains perfectly compliant.</p>
                 </div>
               </div>
               <div className="flex items-start gap-8 group">
                 <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center flex-shrink-0 text-[#B4833E] shadow-sm border border-slate-100 group-hover:bg-[#B4833E] group-hover:text-white transition-all duration-300">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-[#1A1A1A] mb-2 uppercase tracking-wide">Agile Financials</h4>
-                  <p className="text-slate-500 leading-relaxed text-sm font-light">Real-time data visualization and reporting that allows for swift decision-making in a competitive market.</p>
+                  <h4 className="text-xl font-bold text-[#1A1A1A] mb-2 uppercase tracking-wide">Absolute Precision</h4>
+                  <p className="text-slate-500 leading-relaxed text-sm font-light">Our detail-oriented approach means your records are always audit-ready and insightful.</p>
                 </div>
               </div>
             </div>
@@ -217,16 +207,16 @@ const About: React.FC = () => {
 
 const Services: React.FC = () => {
   const services: ServiceItem[] = [
-    { id: 'tax', title: 'Personal & Corp Tax', description: 'Advanced planning strategies to protect wealth and ensure efficient tax positioning.', icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg> },
-    { id: 'bookkeeping', title: 'Elite Bookkeeping', description: 'Comprehensive day-to-day management of your ledgers with total transparency.', icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg> },
-    { id: 'payroll', title: 'Payroll & HST', description: 'Seamless administration of employee benefits and sales tax reporting for modern teams.', icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg> },
+    { id: 'tax', title: 'Tax Strategy & Filing', description: 'Comprehensive planning for individuals and corporations to optimize returns and minimize liabilities.', icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg> },
+    { id: 'bookkeeping', title: 'Full-Cycle Bookkeeping', description: 'Daily management of ledgers, reconciliations, and financial reporting with total transparency.', icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg> },
+    { id: 'payroll', title: 'Payroll & HST Services', description: 'Streamlined administration of employee deductions and sales tax reporting for modern operations.', icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg> },
   ];
   return (
     <section className="py-32 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <span className="text-[#B4833E] font-bold uppercase tracking-[0.4em] text-[11px] mb-6 block">Our Core Capabilities</span>
-          <h3 className="text-4xl lg:text-6xl font-serif text-[#1A1A1A] mb-8">Integrated Solutions</h3>
+          <h3 className="text-4xl lg:text-6xl font-serif text-[#1A1A1A] mb-8">Professional Services</h3>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
           {services.map((s) => (
@@ -235,7 +225,7 @@ const Services: React.FC = () => {
               <h4 className="text-2xl font-bold text-[#1A1A1A] mb-6 tracking-tight uppercase">{s.title}</h4>
               <p className="text-slate-500 leading-relaxed font-light text-sm">{s.description}</p>
               <div className="mt-10 pt-8 border-t border-slate-50 flex items-center justify-between">
-                 <button className="text-[10px] font-bold uppercase tracking-widest text-[#B4833E] hover:text-black flex items-center gap-2">Explore Service <span>→</span></button>
+                 <button className="text-[10px] font-bold uppercase tracking-widest text-[#B4833E] hover:text-black flex items-center gap-2">Details <span>→</span></button>
               </div>
             </div>
           ))}
@@ -251,12 +241,12 @@ const Contact: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row gap-20">
           <div className="lg:w-1/2">
-            <span className="text-[#B4833E] font-bold uppercase tracking-[0.4em] text-[11px] mb-8 block">Inquiry</span>
-            <h3 className="text-4xl lg:text-7xl font-serif mb-12 italic">Connect With <br />Our Studio.</h3>
+            <span className="text-[#B4833E] font-bold uppercase tracking-[0.4em] text-[11px] mb-8 block">Connect</span>
+            <h3 className="text-4xl lg:text-7xl font-serif mb-12 italic">Reach Our <br />Partners.</h3>
             <div className="space-y-12">
               <div className="flex items-start gap-8">
                 <div className="w-12 h-12 bg-white/5 rounded flex items-center justify-center text-[#B4833E] border border-white/10 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /></svg></div>
-                <div><h4 className="font-bold text-lg mb-2 uppercase tracking-wide">The Office</h4><p className="text-slate-400 font-light">1530 Fairway Hills Dr, Mississauga, ON L5M 7G2</p></div>
+                <div><h4 className="font-bold text-lg mb-2 uppercase tracking-wide">Primary Location</h4><p className="text-slate-400 font-light">Mississauga, Ontario, Canada</p></div>
               </div>
               <div className="flex items-start gap-8">
                 <div className="w-12 h-12 bg-white/5 rounded flex items-center justify-center text-[#B4833E] border border-white/10 flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg></div>
@@ -266,14 +256,14 @@ const Contact: React.FC = () => {
           </div>
           <div className="lg:w-1/2 bg-white rounded-2xl p-12 lg:p-20 text-[#1A1A1A] shadow-inner">
             <h4 className="text-3xl font-serif mb-4">Request a Consultation</h4>
-            <p className="text-slate-400 font-light mb-10 text-sm">Please provide your details for a confidential evaluation.</p>
+            <p className="text-slate-400 font-light mb-10 text-sm">Submit your information for a confidential review of your situation.</p>
             <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); alert("Request submitted."); }}>
                <div className="grid md:grid-cols-2 gap-6">
                  <input type="text" placeholder="Full Name" aria-label="Full Name" className="w-full bg-slate-50 border border-slate-200 px-6 py-4 rounded-lg focus:ring-1 focus:ring-[#B4833E] outline-none text-sm transition-all" />
-                 <input type="email" placeholder="Email Address" aria-label="Email Address" className="w-full bg-slate-50 border border-slate-200 px-6 py-4 rounded-lg focus:ring-1 focus:ring-[#B4833E] outline-none text-sm transition-all" />
+                 <input type="email" placeholder="Business Email" aria-label="Email Address" className="w-full bg-slate-50 border border-slate-200 px-6 py-4 rounded-lg focus:ring-1 focus:ring-[#B4833E] outline-none text-sm transition-all" />
                </div>
-               <textarea rows={4} placeholder="Brief Inquiry..." aria-label="Brief Inquiry" className="w-full bg-slate-50 border border-slate-200 px-6 py-4 rounded-lg focus:ring-1 focus:ring-[#B4833E] outline-none text-sm transition-all"></textarea>
-               <button className="w-full bg-[#1A1A1A] hover:bg-[#B4833E] text-white py-5 rounded-lg font-bold uppercase tracking-widest text-xs transition-all shadow-lg active:scale-95">Submit Details</button>
+               <textarea rows={4} placeholder="Specific Requirements..." aria-label="Requirements" className="w-full bg-slate-50 border border-slate-200 px-6 py-4 rounded-lg focus:ring-1 focus:ring-[#B4833E] outline-none text-sm transition-all"></textarea>
+               <button className="w-full bg-[#1A1A1A] hover:bg-[#B4833E] text-white py-5 rounded-lg font-bold uppercase tracking-widest text-xs transition-all shadow-lg active:scale-95">Send Request</button>
             </form>
           </div>
         </div>
@@ -288,26 +278,17 @@ const Footer: React.FC = () => (
       <div className="flex flex-col md:flex-row justify-between items-center gap-12 mb-16">
         <div>
           <div className="flex items-center space-x-3 mb-6 justify-center md:justify-start">
-             <img src="logo.png" alt="Numeracy Accounting Solutions Logo" className="h-8 w-auto object-contain" onError={(e) => (e.target as HTMLImageElement).style.display='none'} />
              <div className="flex flex-col">
-               <span className="text-xl font-bold tracking-tight text-[#1A1A1A] leading-none">NUMERACY</span>
-               <span className="text-[9px] uppercase tracking-[0.2em] text-[#B4833E] font-medium">Accounting Solutions</span>
+               <span className="text-xl font-bold tracking-tight text-[#1A1A1A] leading-none uppercase">General</span>
+               <span className="text-[9px] uppercase tracking-[0.2em] text-[#B4833E] font-medium">Bookkeeping Co.</span>
              </div>
           </div>
-          <p className="text-slate-400 text-sm font-light">Excellence in financial intelligence since 2014.</p>
+          <p className="text-slate-400 text-sm font-light">Boutique financial intelligence for the Greater Toronto Area.</p>
         </div>
         <div className="flex flex-col items-center md:items-end gap-6">
-          <div className="flex items-center gap-4">
-            <a href="#" className="w-10 h-10 rounded-lg bg-slate-50 flex items-center justify-center text-[#1A1A1A] hover:bg-[#B4833E] hover:text-white transition-all duration-300 border border-slate-100" aria-label="Visit our LinkedIn profile">
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-            </a>
-            <a href="#" className="w-10 h-10 rounded-lg bg-slate-50 flex items-center justify-center text-[#1A1A1A] hover:bg-[#B4833E] hover:text-white transition-all duration-300 border border-slate-100" aria-label="Follow us on Instagram">
-               <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            </a>
-          </div>
-          <p className="text-slate-300 text-[10px] font-bold uppercase tracking-[0.4em]">© {new Date().getFullYear()} Numeracy Accounting Solutions</p>
+          <p className="text-slate-300 text-[10px] font-bold uppercase tracking-[0.4em]">© {new Date().getFullYear()} General Bookkeeping Co.</p>
           <div className="flex gap-8 text-[9px] font-bold text-slate-300 uppercase tracking-widest">
-             <a href="#" className="hover:text-[#B4833E] transition-colors">Privacy Policy</a>
+             <a href="#" className="hover:text-[#B4833E] transition-colors">Confidentiality Policy</a>
              <a href="#" className="hover:text-[#B4833E] transition-colors">Terms of Service</a>
           </div>
         </div>
@@ -318,7 +299,7 @@ const Footer: React.FC = () => (
 
 const AIChatbot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<{ role: 'user' | 'ai', text: string }[]>([{ role: 'ai', text: 'Welcome to Numeracy. I am your automated financial concierge. How may I assist with your professional inquiry today?' }]);
+  const [messages, setMessages] = useState<{ role: 'user' | 'ai', text: string }[]>([{ role: 'ai', text: 'Welcome to General Bookkeeping Co. I am your automated financial concierge. How may I assist with your management or tax inquiry today?' }]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -336,12 +317,12 @@ const AIChatbot: React.FC = () => {
       const res = await ai.models.generateContent({
         model: 'gemini-3-flash-preview',
         contents: userMsg,
-        config: { systemInstruction: "You are the professional concierge for Numeracy Accounting Solutions, a premium firm in Mississauga. Your tone is executive, precise, and highly capable. Provide general Canadian tax and bookkeeping guidance. Emphasize that for specific strategy, they must book a formal consultation with our principals." },
+        config: { systemInstruction: "You are the professional concierge for General Bookkeeping Co., a premium firm in Mississauga. Your tone is executive, precise, and highly capable. Provide general Canadian tax and bookkeeping guidance. Emphasize that for specific strategy, they must book a formal consultation with our principals." },
       });
       const aiText = res.text;
       setMessages(p => [...p, { role: 'ai', text: aiText || "I'm sorry, I couldn't process that request." }]);
     } catch (e) {
-      setMessages(p => [...p, { role: 'ai', text: "Error connecting to the Numeracy Concierge. Please try again later." }]);
+      setMessages(p => [...p, { role: 'ai', text: "Error connecting to our concierge. Please try again later." }]);
     } finally { setIsLoading(false); }
   };
 
@@ -358,9 +339,9 @@ const AIChatbot: React.FC = () => {
         <div className="absolute bottom-24 right-0 w-[380px] h-[550px] bg-white rounded-xl shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-10 border border-slate-200">
           <div className="bg-[#1A1A1A] p-8 text-white border-b border-slate-800">
              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-[#B4833E] rounded flex items-center justify-center text-[10px] font-bold tracking-tighter shadow-inner">NC</div>
+                <div className="w-8 h-8 bg-[#B4833E] rounded flex items-center justify-center text-[10px] font-bold tracking-tighter shadow-inner">GBC</div>
                 <div>
-                   <h4 className="font-serif font-bold text-lg leading-tight tracking-tight">Numeracy Concierge</h4>
+                   <h4 className="font-serif font-bold text-lg leading-tight tracking-tight">Financial Assistant</h4>
                    <p className="text-[10px] text-[#B4833E] font-bold uppercase tracking-[0.2em] mt-1">Status: Operational</p>
                 </div>
              </div>
@@ -415,7 +396,7 @@ const App: React.FC = () => {
             <button onClick={() => setIsConsultationOpen(false)} className="absolute top-8 right-8 text-slate-300 hover:text-[#B4833E] transition-colors z-10" aria-label="Close modal"><svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg></button>
             <div className="p-12 lg:p-20">
                <h3 className="text-4xl font-serif text-[#1A1A1A] mb-4 text-center">Consultation Request</h3>
-               <p className="text-slate-400 font-light text-center mb-12 text-xs uppercase tracking-[0.4em]">Confidential Financial Advisory</p>
+               <p className="text-slate-400 font-light text-center mb-12 text-xs uppercase tracking-[0.4em]">Confidential Advisory Services</p>
                <form className="space-y-8" onSubmit={(e) => { e.preventDefault(); alert("Consultation request sent."); setIsConsultationOpen(false); }}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                      <div className="space-y-2">
@@ -427,7 +408,7 @@ const App: React.FC = () => {
                         <input type="email" required placeholder="name@company.com" aria-label="Email Address" className="w-full bg-slate-50 border border-slate-200 rounded-lg px-6 py-4 focus:ring-1 focus:ring-[#B4833E] outline-none text-sm transition-all" />
                      </div>
                   </div>
-                  <button type="submit" className="w-full bg-[#1A1A1A] text-white py-5 rounded-lg font-bold uppercase tracking-widest text-xs shadow-xl shadow-slate-200 hover:bg-[#B4833E] transition-all active:scale-95">Submit Evaluation Request</button>
+                  <button type="submit" className="w-full bg-[#1A1A1A] text-white py-5 rounded-lg font-bold uppercase tracking-widest text-xs shadow-xl shadow-slate-100 hover:bg-[#B4833E] transition-all active:scale-95">Submit Request</button>
                </form>
             </div>
           </div>
